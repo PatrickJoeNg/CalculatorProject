@@ -71,7 +71,6 @@ namespace CalculatorProject
             this.calculatorLabel.Name = "calculatorLabel";
             this.calculatorLabel.Size = new System.Drawing.Size(336, 55);
             this.calculatorLabel.TabIndex = 17;
-            this.calculatorLabel.Text = "0";
             this.calculatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // oneButton
@@ -294,7 +293,6 @@ namespace CalculatorProject
             this.Name = "CalculatorDashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
-            this.Load += new System.EventHandler(this.CalculatorDashboardForm_Load);
             this.ResumeLayout(false);
 
         }
