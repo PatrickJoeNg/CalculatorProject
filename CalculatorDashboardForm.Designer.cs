@@ -48,6 +48,10 @@ namespace CalculatorProject
             this.minusButton = new System.Windows.Forms.Button();
             this.plusButton = new System.Windows.Forms.Button();
             this.equalsButton = new System.Windows.Forms.Button();
+            this.operatorLabel = new System.Windows.Forms.Label();
+            this.firstNumberLabel = new System.Windows.Forms.Label();
+            this.equalLabel = new System.Windows.Forms.Label();
+            this.secondNumberLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // zeroButton
@@ -66,7 +70,7 @@ namespace CalculatorProject
             // 
             this.calculatorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.calculatorLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculatorLabel.Location = new System.Drawing.Point(40, 52);
+            this.calculatorLabel.Location = new System.Drawing.Point(40, 83);
             this.calculatorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.calculatorLabel.Name = "calculatorLabel";
             this.calculatorLabel.Size = new System.Drawing.Size(336, 55);
@@ -213,8 +217,9 @@ namespace CalculatorProject
             this.percentageButton.Name = "percentageButton";
             this.percentageButton.Size = new System.Drawing.Size(78, 58);
             this.percentageButton.TabIndex = 29;
-            this.percentageButton.Text = "%";
+            this.percentageButton.Text = "/";
             this.percentageButton.UseVisualStyleBackColor = true;
+            this.percentageButton.Click += new System.EventHandler(this.percentageButton_Click);
             // 
             // multiplyButton
             // 
@@ -224,8 +229,9 @@ namespace CalculatorProject
             this.multiplyButton.Name = "multiplyButton";
             this.multiplyButton.Size = new System.Drawing.Size(78, 58);
             this.multiplyButton.TabIndex = 30;
-            this.multiplyButton.Text = "X";
+            this.multiplyButton.Text = "x";
             this.multiplyButton.UseVisualStyleBackColor = true;
+            this.multiplyButton.Click += new System.EventHandler(this.multiplyButton_Click);
             // 
             // minusButton
             // 
@@ -237,6 +243,7 @@ namespace CalculatorProject
             this.minusButton.TabIndex = 31;
             this.minusButton.Text = "-";
             this.minusButton.UseVisualStyleBackColor = true;
+            this.minusButton.Click += new System.EventHandler(this.minusButton_Click);
             // 
             // plusButton
             // 
@@ -260,6 +267,47 @@ namespace CalculatorProject
             this.equalsButton.TabIndex = 33;
             this.equalsButton.Text = "=";
             this.equalsButton.UseVisualStyleBackColor = true;
+            this.equalsButton.Click += new System.EventHandler(this.equalsButton_Click);
+            // 
+            // operatorLabel
+            // 
+            this.operatorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.operatorLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.operatorLabel.Location = new System.Drawing.Point(250, 41);
+            this.operatorLabel.Name = "operatorLabel";
+            this.operatorLabel.Size = new System.Drawing.Size(34, 25);
+            this.operatorLabel.TabIndex = 34;
+            this.operatorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // firstNumberLabel
+            // 
+            this.firstNumberLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.firstNumberLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNumberLabel.Location = new System.Drawing.Point(127, 41);
+            this.firstNumberLabel.Name = "firstNumberLabel";
+            this.firstNumberLabel.Size = new System.Drawing.Size(117, 25);
+            this.firstNumberLabel.TabIndex = 35;
+            this.firstNumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // equalLabel
+            // 
+            this.equalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.equalLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equalLabel.Location = new System.Drawing.Point(342, 41);
+            this.equalLabel.Name = "equalLabel";
+            this.equalLabel.Size = new System.Drawing.Size(34, 25);
+            this.equalLabel.TabIndex = 36;
+            this.equalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // secondNumberLabel
+            // 
+            this.secondNumberLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondNumberLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondNumberLabel.Location = new System.Drawing.Point(290, 41);
+            this.secondNumberLabel.Name = "secondNumberLabel";
+            this.secondNumberLabel.Size = new System.Drawing.Size(43, 25);
+            this.secondNumberLabel.TabIndex = 37;
+            this.secondNumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // CalculatorDashboardForm
             // 
@@ -267,6 +315,10 @@ namespace CalculatorProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(416, 530);
+            this.Controls.Add(this.secondNumberLabel);
+            this.Controls.Add(this.equalLabel);
+            this.Controls.Add(this.firstNumberLabel);
+            this.Controls.Add(this.operatorLabel);
             this.Controls.Add(this.equalsButton);
             this.Controls.Add(this.plusButton);
             this.Controls.Add(this.minusButton);
@@ -317,5 +369,9 @@ namespace CalculatorProject
         private System.Windows.Forms.Button minusButton;
         private System.Windows.Forms.Button plusButton;
         private System.Windows.Forms.Button equalsButton;
+        private System.Windows.Forms.Label operatorLabel;
+        private System.Windows.Forms.Label firstNumberLabel;
+        private System.Windows.Forms.Label equalLabel;
+        private System.Windows.Forms.Label secondNumberLabel;
     }
 }
